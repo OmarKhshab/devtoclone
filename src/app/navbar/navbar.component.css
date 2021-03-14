@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover,
+  a:active {
+    color: lightgray;
+  }
+  
+h2 {
+    padding-bottom: 10px;
+    border-bottom: lightgrey 2px;
+}  
+
+.hamburger__content__header {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.bluebold{
+    font-weight: 800;
+    color: blue;
+}
+mat-nav-list {
+    padding: 10px;
+}
+
+.alignbtn {
+    display: grid;
+}
+
+.lighttext {
+    font-weight: 300;
+    color: rgb(168, 168, 171);
+}

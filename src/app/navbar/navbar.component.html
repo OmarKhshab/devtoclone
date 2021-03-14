@@ -1,0 +1,43 @@
+<mat-nav-list>
+    <div style="background-color: #f9fafa; padding: 5px; box-shadow: 1px 1px 1px 1px lightgrey;">
+        <h2 class="hamburger__content__header">EG developer best blog </h2>
+        <hr>
+        <h2><span class="bluebold">EG Dev Community </span> is a community of 581,957 amazing developers <br>
+            <span class="lighttext">'re a place where coders share,<br> stay up-to-date and grow their careers.</span></h2>
+            <div class="alignbtn">
+                <button mat-raised-button color="primary">Create account</button>
+                <br>
+                <button mat-button color="primary">login</button>
+            </div>
+    </div>
+    <a mat-list-item (click)="onClose()">
+      <mat-icon>face</mat-icon>
+      <span class="nav-caption">app_registration</span>
+    </a>
+    <a mat-list-item  (click)="onClose()">
+      <mat-icon>input</mat-icon>
+      <span class="nav-caption">Login</span>
+    </a>
+    <a mat-list-item  (click)="onClose()">
+        <mat-icon>Home</mat-icon>
+        <span class="nav-caption">Home</span>
+      </a>
+    <a mat-list-item (click)="onClose()">
+      <mat-icon>list</mat-icon>
+      <span class="nav-caption">listing</span>
+    </a>
+    <a mat-list-item (click)="onClose()">
+        <mat-icon>mic</mat-icon>
+        <span class="nav-caption">podcast</span>
+      </a>
+      <a mat-list-item (click)="onClose()">
+        <mat-icon>video_label</mat-icon>
+        <span class="nav-caption">videos</span>
+      </a>
+    <mat-list-item>
+      <button mat-icon-button (click)="onLogout()">
+        <mat-icon>eject</mat-icon>
+        <span class="nav-caption">Logout</span>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
