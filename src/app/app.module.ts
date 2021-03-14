@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavbarListComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { SignUPComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     NavbarListComponent,
     HomeComponent,
+    SignUPComponent,
   ],
   imports: [
     BrowserModule,

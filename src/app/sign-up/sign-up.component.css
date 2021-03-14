@@ -1,0 +1,27 @@
+.hamburger__content__header {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+.bluebold{
+    font-weight: 800;
+    color: blue;
+    align-content: center;
+}
+
+.testWiredEffect{
+    border: 1px solid 1px;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.new-training {
+    padding: 50px;
+    margin: 50px;
+}
