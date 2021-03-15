@@ -10,6 +10,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavbarListComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SignUPComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { FormsModule } from '@angular/forms';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { SignUPComponent } from './sign-up/sign-up.component';
     NavbarListComponent,
     HomeComponent,
     SignUPComponent,
+    SignInComponent,
+    ForgetPasswordComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
