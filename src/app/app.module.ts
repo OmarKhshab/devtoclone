@@ -14,6 +14,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { FormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { FooterComponent } from './footer/footer.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
     SignInComponent,
     ForgetPasswordComponent,
     FooterComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

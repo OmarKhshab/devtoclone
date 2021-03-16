@@ -46,6 +46,7 @@ mat-nav-list {
 
 mat-list-item {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 mat-list { 
     display: flex;
