@@ -1,22 +1,23 @@
 <mat-nav-list>
-    <div style="background-color: #f9fafa; padding: 5px; box-shadow: 1px 1px 1px 1px lightgrey;">
+    <div style="background-color: #f9fafa; padding: 5px; box-shadow: 1px 1px 1px 1px lightgrey;" *ngIf="!userStatus">
         <h2 class="hamburger__content__header">EG developer best blog </h2>
         <hr>
         <h2><span class="bluebold">EG Dev Community </span> is a community of 581,957 amazing developers <br>
             <span class="lighttext">'re a place where coders share,<br> stay up-to-date and grow their careers.</span></h2>
             <div class="alignbtn">
-                <button mat-raised-button color="primary">Create account</button>
-                <br>
-                <button mat-button color="primary">login</button>
+              <button mat-button color="primary" routerLink="signin" *ngIf="!userStatus">login</button>
+              <button mat-button color="primary" routerLink="signin" *ngIf="userStatus" (click)="logout()">logout</button>
+              <button mat-raised-button color="primary" routerLink="signup" *ngIf="!userStatus">Create account</button>
+              <button mat-raised-button color="primary" routerLink="signup" *ngIf="userStatus">Write Article</button>
             </div>
     </div>
-    <a mat-list-item (click)="onClose()">
+    <a mat-list-item (click)="onClose()" *ngIf="!userStatus">
       <mat-icon>face</mat-icon>
-      <span class="nav-caption">app_registration</span>
+      <span class="nav-caption" routerLink="signup">app_registration</span>
     </a>
-    <a mat-list-item  (click)="onClose()">
+    <a mat-list-item  (click)="onClose()" *ngIf="!userStatus">
       <mat-icon>input</mat-icon>
-      <span class="nav-caption">Login</span>
+      <span class="nav-caption" routerLink="signin">Login</span>
     </a>
     <a mat-list-item  (click)="onClose()">
         <mat-icon>Home</mat-icon>
@@ -37,7 +38,7 @@
     <mat-list-item>
       <button mat-icon-button (click)="onLogout()">
         <mat-icon>eject</mat-icon>
-        <span class="nav-caption">Logout</span>
+        <span class="nav-caption" (click)="logout()">Logout</span>
       </button>
     </mat-list-item>
   </mat-nav-list>

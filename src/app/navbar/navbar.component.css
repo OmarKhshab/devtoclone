@@ -37,3 +37,7 @@ mat-nav-list {
     font-weight: 300;
     color: rgb(168, 168, 171);
 }
+
+mat-icon {
+    margin-right: 15px;
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUPComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebase: FirebaseService) { }
 
   ngOnInit(): void {
   }
-
+  public onSubmit(form: NgForm) {
+    const date = {
+      email: form.value.email,
+      password: form.value.password
+    };
+    this.firebase.signUpEmail(date.email,date.password);
+  }
 }

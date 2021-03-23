@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostComponent } from './post/post.component';
+import { AngularFireModule } from '@angular/fire';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,17 @@ import { PostComponent } from './post/post.component';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyDsd_c2X47GVEFMy7jtgVYWYgzXOGRvQNM",
+      authDomain: "egydev-e047a.firebaseapp.com",
+      projectId: "egydev-e047a",
+      storageBucket: "egydev-e047a.appspot.com",
+      messagingSenderId: "934199077375",
+      appId: "1:934199077375:web:54ad24ee8fb00848fc9fca",
+      measurementId: "G-65J09LJ2KC"
+    })
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

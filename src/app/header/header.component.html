@@ -1,11 +1,11 @@
 <p>
     <mat-toolbar>
-    <div fxHide.gt-xs>
+    <div fxHide.gt-xs >
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="onToggleSidenav()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    <span>EGDEV</span>
+    <span routerLink="">EGDEV</span>
     <span class="example-spacer"></span>
     <div fxHide.xs>
         <input placeholder="Search..." class='search'>
@@ -14,8 +14,10 @@
         <button mat-icon-button fxHide.gt-xs class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>search</mat-icon>
         </button>
-        <button mat-button color="primary">login</button>
-        <button mat-raised-button color="primary">Create account</button>
+        <button mat-button color="primary" routerLink="signin" *ngIf="!userStatus">login</button>
+        <button mat-button color="primary" routerLink="signin" *ngIf="userStatus" (click)="logout()">logout</button>
+        <button mat-raised-button color="primary" routerLink="signup" *ngIf="!userStatus">Create account</button>
+        <button mat-raised-button color="primary" routerLink="signup" *ngIf="userStatus">Write Article</button>
     </div>
   </mat-toolbar>
   </p>

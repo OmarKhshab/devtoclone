@@ -6,11 +6,16 @@ body {
 .search {
     padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 200px;
     background-color:#f8f8ff;
-    border-radius: 7px;
+    border-radius: 4px;
 }
 mat-toolbar {
     padding-right: 10%;
     padding-left: 10%;
 }
+@media only screen and (max-width: 600px) {
+    mat-toolbar {
+      padding: 0px;
+    }
+  }

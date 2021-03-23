@@ -5,10 +5,9 @@
                 <br>
                 <br>
                 <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
-                    <button mat-raised-button style="width: 95%; padding: 10px 12px; background: #000000; color: white; text-align: center;">sign in with Apple id</button>
-                    <button mat-raised-button style="width: 95%; padding: 10px 12px; background: #24292E; color: white; text-align: center">sign in with Github</button>
-                    <button mat-raised-button style="width: 95%; padding: 10px 12px; background: #1DA1F2; color: white; text-align: center">sign in with Twitter</button> 
-                    
+                    <button mat-raised-button class="fa fa-apple" style="width: 95%; padding: 10px 12px; background: #000000; color: white; text-align: center;"><span class="space">Continue with Apple ID</span></button>
+                    <button mat-raised-button class="fa fa-github" style="width: 95%; padding: 10px 12px; background: #24292E; color: white; text-align: center"><span class="space" (click)="githubLogin()">Continue with Github</span></button>
+                    <button mat-raised-button  class="fa fa-twitter"style="width: 95%; padding: 10px 12px; background: #1DA1F2; color: white; text-align: center"><span class="space" (click)="twitterLogin()">Continue with Twitter </span></button>                   
                 </mat-card-content>
                 <mat-card-actions fxLayoutAlign="center" style="padding-bottom: 50px;">
                     <section class="signup-form">
@@ -25,7 +24,7 @@
                           </mat-form-field>
                           <mat-checkbox ngModel name="agree" color="primary">Remember me</mat-checkbox>
                           <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
-                          <a>forget my password</a>
+                          <a [routerLink]="[ '/fpassword']">forget my password</a>
                         </form>
                       </section>
                   </mat-card-actions>
