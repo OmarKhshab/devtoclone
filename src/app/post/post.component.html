@@ -1,31 +1,33 @@
-<section  style="margin-top: 20px; width: 100%;">
-    <mat-card >
-            <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
-                <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ru06ppQH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d8ivf8ishq9ixi9qi162.png" mat-card-image>
-                <div fxLayout="row" style="align-self:flex-start;">
-                    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s---pzTj5Ns--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/86068/5bd6994f-2438-4e5b-a6b2-8a422b566334.jpeg" style="border-radius: 70%; width: 2rem; height: 2rem; " >
-                    <div fxLayout="column" fxLayoutGap="1px" style="margin-left: 5px;">
-                    <p style="font-weight: bolder;">Hand Dot</p>
-                    <p>15 Mar</p>
+<div *ngIf="articles">
+    <section  style="margin-top: 20px; width: 100%;" *ngFor="let artcile of articles">
+        <mat-card >
+                <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+                    <a href="{{artcile.url}}" target="_blank">
+                    <img src="{{artcile.cover_image}}" mat-card-image >
+                    </a>
+                    <div fxLayout="row" style="align-self:flex-start;">
+                        <img src="{{artcile.user.profile_image}}" style="border-radius: 70%; width: 2rem; height: 2rem; " >
+                        <div fxLayout="column" fxLayoutGap="1px" style="margin-left: 5px;">
+                        <p style="font-weight: bolder;">{{artcile.user.name}}</p>
+                        <p>{{artcile.published_at }}</p>
+                        </div>
                     </div>
-                </div>
-                
-                <h1 style="font-weight: bolder;">A full comparison of 6 JS libraries for generating PDFs</h1>
-                    <ul fxLayout="row" style="align-self: flex-start;">
-                        <li role="listitem">#javaScript</li>
-                        <li role="listitem">#node</li>
-                        <li role="listitem">#typeScript</li>
-                        <li role="listitem">#pdf</li>
-                    </ul>
-                    <ul  fxLayout="row" style="align-self: flex-start;">
-                        <li role="listitem"><mat-icon> comment</mat-icon> comments</li>
-                        <li role="listitem"><mat-icon>thumbs_up_down</mat-icon>  reactions</li>
-                    </ul>
-                    <ul fxLayout="row" style="align-self: flex-end;">
-                        <li role="listitem"> 5 min read</li>
-                        <mat-chip style="padding: 10px; border-radius: 25%;">Save</mat-chip>
-                    </ul>
-            </mat-card-content>
-                
-    </mat-card>
-</section>
+                    
+                    <h1 style="font-weight: bolder;">{{artcile.description}}</h1>
+                        
+                        <ul fxLayout="row" style="align-self: flex-start;" fxLayoutGap="5px">
+                            <li *ngFor="let tag of artcile.tag_list" role="listitem">#{{tag}}</li>
+                        </ul>
+                        <ul  fxLayout="row" style="align-self: flex-start;">
+                            <li role="listitem"><mat-icon> comment</mat-icon>{{artcile.comments_count}} comments</li>
+                            <li role="listitem"><mat-icon>thumbs_up_down</mat-icon>{{artcile.public_reactions_count}}  reactions</li>
+                        </ul>
+                        <ul fxLayout="row" style="align-self: flex-end;">
+                            <li role="listitem"> 5 min read</li>
+                            <mat-chip style="padding: 10px; border-radius: 25%;">Save</mat-chip>
+                        </ul>
+                </mat-card-content>
+                    
+        </mat-card>
+    </section>
+</div>

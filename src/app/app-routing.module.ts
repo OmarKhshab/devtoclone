@@ -5,6 +5,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUPComponent } from './sign-up/sign-up.component';
+import { UserGuard } from './user.guard';
+import { WritePostComponent } from './write-post/write-post.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUPComponent, canActivate:[AuthGuard]},
   { path: 'signin', component: SignInComponent, canActivate:[AuthGuard]},
   { path: 'fpassword', component: ForgetPasswordComponent, canActivate:[AuthGuard]},
+  { path:'wPost', component: WritePostComponent, canActivate:[UserGuard]}
 ];
 
 @NgModule({

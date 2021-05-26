@@ -16,16 +16,19 @@ export class NavbarListComponent implements OnInit{
   ngOnInit(): void {
     this.firebaselogin.isLoggedin.subscribe(logedIn => {
       this.firebaselogin.isLoggedin.subscribe(logedIn => {
-        if (localStorage.getItem('loggedIn') && !logedIn)
+        if (localStorage.getItem('loggedIn'))
         {
-          this.userStatus = false;
+          this.userStatus = true;
+          return;
         }
         if (logedIn)
         {
           this.userStatus = true;
+          return;
         }
         else {
           this.userStatus = false;
+          return;
         }
       });
     });

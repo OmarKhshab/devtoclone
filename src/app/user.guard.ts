@@ -16,13 +16,14 @@ export class UserGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.userStatus){
-      return this.userStatus;
-    }
-    else{
-      this.router.navigate(['signup']);
-      return this.userStatus
-    }
+      if(localStorage.getItem('loggedIn'))
+      {
+        return true;
+      }
+      else {
+        this.router.navigate(['signin']);
+        return false;
+      }
   }
   
 }

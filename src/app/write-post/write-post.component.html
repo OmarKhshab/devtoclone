@@ -1,0 +1,25 @@
+<div class="mar">
+    <h1 fxHide.xs>Write post</h1>
+    <mat-tab-group fxFlex.xs="100%" dynamicHeight  mat-align-tabs="end">
+        <mat-tab label="Edit">
+            <mat-card>
+              <section class="signup-form">
+                <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+                  <button mat-raised-button (click)="filePicker.click()" style="align-self: flex-start;" *ngIf="!(imageBoolean | async )">Add cover photo</button>
+                  <input type="file" #filePicker (change)="onImagePicked($event)">
+                  <div style="align-self: flex-start; flex-direction: row;" *ngIf="(imageBoolean | async )">
+                    <img class="img-preview" [src]="imagePreview">
+                    <button mat-raised-button style="margin-left: 20px; margin-right: 20px;" (click)="filePicker.click()">Change</button>
+                    <button mat-stroked-button color="warn" (click)="removePic()">Remove</button>
+                  </div>
+                </form>
+              </section>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="preview">
+          <div class="example-large-box mat-elevation-z4">
+            preview
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>

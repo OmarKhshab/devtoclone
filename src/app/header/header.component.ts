@@ -12,16 +12,19 @@ export class HeaderComponent implements OnInit{
 
   constructor(private firebaselogin:FirebaseService){
     this.firebaselogin.isLoggedin.subscribe(logedIn => {
-      if (localStorage.getItem('loggedIn') && !logedIn)
+      if (localStorage.getItem('loggedIn') || !logedIn)
       {
-        this.userStatus = false;
+        this.userStatus = true;
+        return;
       }
       if (logedIn)
       {
         this.userStatus = true;
+        return;
       }
       else {
         this.userStatus = false;
+        return;
       }
     });
   }

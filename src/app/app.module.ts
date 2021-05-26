@@ -17,6 +17,9 @@ import { FooterComponent } from './footer/footer.component';
 import { PostComponent } from './post/post.component';
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './services/firebase.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PostsService } from './posts.service';
+import { WritePostComponent } from './write-post/write-post.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { FirebaseService } from './services/firebase.service';
     ForgetPasswordComponent,
     FooterComponent,
     PostComponent,
+    WritePostComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { FirebaseService } from './services/firebase.service';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyDsd_c2X47GVEFMy7jtgVYWYgzXOGRvQNM",
       authDomain: "egydev-e047a.firebaseapp.com",
@@ -47,7 +52,7 @@ import { FirebaseService } from './services/firebase.service';
       measurementId: "G-65J09LJ2KC"
     })
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService , PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

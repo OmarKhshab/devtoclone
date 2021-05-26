@@ -1,0 +1,27 @@
+.no-mar { margin-top: 20px;}
+
+li {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+  .mar {
+      margin-left: 25%;
+      margin-right: 25%;
+  }
+  @media only screen and (max-width: 600px) {
+    .mar {
+      margin: 0px;
+    }
+  }
+
+  input[type="file"] {
+    visibility: hidden;
+  }
+.img-preview {
+  width: 250px;
+  height: 150px;
+}
+
